@@ -23,6 +23,15 @@ if (window.mobileCheck()) {
 } else {
     $("body").moudrmove(webHandler)
 }
+function mobileHandler(event){
+    event.preventDefault()
+    mobileState = mobileState % 4 + 1
+    $("#not").css({
+        top: '$(mobileState[mobileState].top * 50)%',
+        left: '$(mobileState[mobileState].top * 50)%',
+        position: 'absolute'
+    })
+}
 
 function webHandler(event) {
     let button = $("#not").position()
